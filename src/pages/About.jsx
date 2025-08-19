@@ -16,7 +16,7 @@ const About = () => {
         >
             {/* Section Title */}
             <motion.h2
-                className="text-4xl sm:text-5xl font-bold mb-6 text-center text-yellow-400"
+                className="text-4xl sm:text-5xl font-bold mb-6 text-center text-purple-400"
                 initial="hidden"
                 whileInView="visible"
                 variants={sectionVariant}
@@ -37,7 +37,6 @@ const About = () => {
                 my skills by learning Redux for state management and Next.js for
                 server-side rendering and advanced web applications.
             </motion.p>
-            <Skills></Skills>
         </section>
     );
 };

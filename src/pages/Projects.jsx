@@ -45,7 +45,7 @@ const Project = () => {
             className="w-full px-4 py-16 flex flex-col items-center justify-center bg-gradient-to-b from-[#0C031C] to-[#1a0c36]"
         >
             <motion.h2
-                className="text-4xl sm:text-5xl font-bold text-yellow-400 mb-10 text-center"
+                className="text-4xl sm:text-5xl font-bold text-purple-400 mb-10 text-center"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
             >

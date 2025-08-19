@@ -35,7 +35,7 @@ const Banner = () => {
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.8}}
                     className="text-center md:text-left"
                 >
                     {/* First Line: Left to Right */}
@@ -47,6 +47,7 @@ const Banner = () => {
                                 variants={letterVariantLeft}
                                 initial="hidden"
                                 animate="visible"
+
                                 className="inline-block"
                             >
                                 {char}
@@ -59,6 +60,7 @@ const Banner = () => {
                                 variants={letterVariantLeft}
                                 initial="hidden"
                                 animate="visible"
+                                transition={{duration:0.8 , repeat: Infinity}}
                                 className="inline-block text-yellow-400"
                             >
                                 {char}
@@ -75,7 +77,7 @@ const Banner = () => {
                                 variants={letterVariantRight}
                                 initial="hidden"
                                 animate="visible"
-                                className={`inline-block ${char === " " ? "mx-1" : "text-purple-300"
+                                className={`inline-block ${char === " " ? "mx-1" : "text-purple-400"
                                     }`}
                             >
                                 {char}

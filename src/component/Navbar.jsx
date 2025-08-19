@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { FiMenu, FiX } from "react-icons/fi";
-import { FaUserCircle } from "react-icons/fa"; // Example logo icon
+import { FaUserCircle } from "react-icons/fa"; 
 import { MdOutlineFileDownload } from "react-icons/md";
 
 const Navbar = () => {
@@ -10,6 +10,7 @@ const Navbar = () => {
     const navItems = [
         { name: "Home", to: "home" },
         { name: "About", to: "about" },
+        { name: "Skills", to: "skill" },
         { name: "Projects", to: "projects" },
         { name: "Contact", to: "contact" },
     ];

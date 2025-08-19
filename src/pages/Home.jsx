@@ -15,6 +15,8 @@ const Home = () => {
         <div className="bg-[#0C031C]">
             <Banner></Banner>
            <About></About>
+           
+            <Skills></Skills>
 
             <Project></Project>
 
