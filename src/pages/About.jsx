@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion";
+import Skills from './Skills';
 
 const sectionVariant = {
     hidden: { opacity: 0, y: 50 },
@@ -11,7 +12,7 @@ const About = () => {
     return (
         <section
             id="about"
-            className="min-h-screen py-16 px-4 flex flex-col items-center justify-center bg-gradient-to-b from-[#0C031C] to-[#1a0c36]"
+            className="py-4 px-4 flex flex-col items-center justify-center"
         >
             {/* Section Title */}
             <motion.h2
@@ -25,7 +26,7 @@ const About = () => {
 
             {/* Description */}
             <motion.p
-                className="text-center text-gray-300 max-w-3xl mb-8 text-lg sm:text-xl leading-relaxed"
+                className="text-center text-gray-300  mb-8 text-lg sm:text-xl leading-relaxed"
                 initial="hidden"
                 whileInView="visible"
                 variants={sectionVariant}
@@ -36,6 +37,7 @@ const About = () => {
                 my skills by learning Redux for state management and Next.js for
                 server-side rendering and advanced web applications.
             </motion.p>
+            <Skills></Skills>
         </section>
     );
 };

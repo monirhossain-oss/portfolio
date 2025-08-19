@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Banner from "./Banner";
 import About from "./About";
+import Skills from "./Skills";
+import Project from "./Projects";
 
 const sectionVariant = {
     hidden: { opacity: 0, y: 40 },
@@ -14,31 +16,7 @@ const Home = () => {
             <Banner></Banner>
            <About></About>
 
-            {/* Projects Section */}
-            <section
-                id="projects"
-                className="h-screen flex flex-col items-center justify-center bg-gray-100 px-4"
-            >
-                <motion.h2
-                    className="text-4xl font-bold mb-4"
-                    initial="hidden"
-                    whileInView="visible"
-                    variants={sectionVariant}
-                >
-                    My Projects
-                </motion.h2>
-
-                <motion.div
-                    className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl"
-                    initial="hidden"
-                    whileInView="visible"
-                    variants={sectionVariant}
-                >
-                    <div className="bg-white shadow-md rounded-lg p-4">Project 1</div>
-                    <div className="bg-white shadow-md rounded-lg p-4">Project 2</div>
-                    <div className="bg-white shadow-md rounded-lg p-4">Project 3</div>
-                </motion.div>
-            </section>
+            <Project></Project>
 
             {/* Contact Section */}
             <section
