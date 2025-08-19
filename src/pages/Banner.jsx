@@ -28,7 +28,7 @@ const Banner = () => {
     return (
         <div
             id="home"
-            className="min-h-screen flex items-center justify-center bg-gradient-to-l from-[#0C031C] to-[#0C031C] text-white px-4 sm:px-6 lg:px-12"
+            className="min-h-screen max-w-6xl mx-auto flex items-center justify-center bg-gradient-to-l from-[#0C031C] to-[#0C031C] text-white px-4 sm:px-6 lg:px-12"
         >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 lg:gap-16 items-center max-w-6xl w-full">
                 {/* Left Side: Text Content */}
