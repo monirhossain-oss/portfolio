@@ -42,7 +42,7 @@ const About = () => {
     const profession = "FRONTEND DEVELOPER";
 
     return (
-        <section id="about" className="py-16 px-4 flex flex-col items-center justify-center bg-[#0C031C]">
+        <section id="about" className="py-8 px-4 flex flex-col items-center justify-center bg-[#0C031C]">
             {/* Section Title */}
             <motion.h2
                 className="text-4xl sm:text-5xl font-bold mb-8 text-center text-purple-400"

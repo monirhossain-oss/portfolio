@@ -16,7 +16,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="bg-[#0C031C] shadow-lg fixed w-full z-50">
+        <nav className="bg-[#0C031C] opacity-80 shadow-lg fixed w-full z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16 items-center">
 
@@ -24,7 +24,7 @@ const Navbar = () => {
                     <div className="flex items-center space-x-2">
                         <FaUserCircle size={30} className="text-yellow-300" />
                         <h1 className="text-2xl font-extrabold text-white tracking-wide">
-                            Portfolio
+                            Monir Hossain
                         </h1>
                     </div>
 
@@ -50,7 +50,7 @@ const Navbar = () => {
                         <a
                             href="/resume.pdf"
                             download
-                            className="bg-yellow-400 text-black font-semibold px-4 py-2 rounded-full shadow hover:bg-yellow-300 transition flex items-center gap-2"
+                            className=" border-yellow-400 border-2 hover:text-black text-white font-semibold px-4 py-1 rounded-full shadow hover:bg-yellow-300 transition flex items-center gap-2"
                         >
                             <MdOutlineFileDownload size={20} />
                             Resume

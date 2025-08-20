@@ -42,7 +42,7 @@ const Project = () => {
     return (
         <section
             id="projects"
-            className="w-full px-4 py-16 flex flex-col items-center justify-center bg-gradient-to-b from-[#0C031C] to-[#1a0c36]"
+            className="w-full px-4 py-16 flex flex-col items-center justify-center bg-[#0C031C]"
         >
             <motion.h2
                 className="text-3xl sm:text-4xl font-bold text-purple-400 mb-10 text-center"
