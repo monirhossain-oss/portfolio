@@ -24,7 +24,7 @@ const Navbar = () => {
                     <div className="flex items-center space-x-2">
                         <FaUserCircle size={30} className="text-yellow-300" />
                         <h1 className="text-2xl font-extrabold text-white tracking-wide">
-                            Monir Hossain
+                            Monir <span className="text-yellow-400">Hossain</span>
                         </h1>
                     </div>
 

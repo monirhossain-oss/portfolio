@@ -35,11 +35,11 @@ const Banner = () => {
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8}}
+                    transition={{ duration: 0.8 }}
                     className="text-center md:text-left"
                 >
                     {/* First Line: Left to Right */}
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 flex flex-wrap justify-center md:justify-start">
+                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 flex flex-wrap justify-center md:justify-start">
                         {`Hi, I'm `.split("").map((char, i) => (
                             <motion.span
                                 key={i}
@@ -47,8 +47,7 @@ const Banner = () => {
                                 variants={letterVariantLeft}
                                 initial="hidden"
                                 animate="visible"
-
-                                className="inline-block"
+                                className={`inline-block ${char === " " ? "mx-1" : ""}`}
                             >
                                 {char}
                             </motion.span>
@@ -60,8 +59,8 @@ const Banner = () => {
                                 variants={letterVariantLeft}
                                 initial="hidden"
                                 animate="visible"
-                                transition={{duration:0.8 , repeat: Infinity}}
-                                className="inline-block text-yellow-400"
+                                transition={{ duration: 0.8 }}
+                                className={`inline-block ${char === " " ? "mx-2" : "text-yellow-400"}`}
                             >
                                 {char}
                             </motion.span>
@@ -95,7 +94,7 @@ const Banner = () => {
                             href="#contact"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                              className="bg-yellow-400 text-black font-semibold px-6 py-1 rounded-full shadow hover:bg-yellow-300  transition duration-300 flex items-center justify-center gap-2"
+                            className="bg-yellow-400 text-black font-semibold px-6 py-1 rounded-full shadow hover:bg-yellow-300  transition duration-300 flex items-center justify-center gap-2"
                         >
                             Contact
                         </motion.a>
@@ -103,7 +102,7 @@ const Banner = () => {
                         <a
                             href="/resume.pdf"
                             download
-                             className="border-2 border-yellow-400 text-white font-semibold px-6 py-1 rounded-full shadow hover:bg-yellow-400 hover:text-black transition duration-300 flex items-center justify-center gap-2"
+                            className="border-2 border-yellow-400 text-white font-semibold px-6 py-1 rounded-full shadow hover:bg-yellow-400 hover:text-black transition duration-300 flex items-center justify-center gap-2"
                         >
                             <MdOutlineFileDownload size={20} />
                             Resume
