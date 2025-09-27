@@ -8,8 +8,8 @@ const sectionVariant = {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
-// Typewriter Component with slower speed and color split
-const TypewriterLoop = ({ text, color, typingSpeed = 150, pauseTime = 1500 }) => {
+// ✅ Single line looping Typewriter (no blinking cursor)
+const TypewriterLoop = ({ text, typingSpeed = 120, pauseTime = 2000, color = "text-purple-300" }) => {
     const [displayed, setDisplayed] = useState("");
     const [index, setIndex] = useState(0);
     const [deleting, setDeleting] = useState(false);
@@ -25,24 +25,26 @@ const TypewriterLoop = ({ text, color, typingSpeed = 150, pauseTime = 1500 }) =>
             } else {
                 setDisplayed(text.slice(0, index - 1));
                 setIndex(index - 1);
-                if (index - 1 === 0) setDeleting(false);
+                if (index - 1 === 0) {
+                    setDeleting(false);
+                }
             }
-        }, deleting ? typingSpeed : typingSpeed);
+        }, typingSpeed);
 
         return () => clearTimeout(timeout);
-    }, [displayed, index, deleting, text, typingSpeed, pauseTime]);
+    }, [index, deleting, text, typingSpeed, pauseTime]);
 
-    return <span className={color}>{displayed}<span className="blinking-cursor"></span></span>;
+    return (
+        <span className={color}>{displayed}</span>
+    );
 };
 
 const About = () => {
     const [showFull, setShowFull] = useState(false);
-
-    const name = "MD MONIR HOSSAIN - ";
-    const profession = "FRONTEND DEVELOPER";
+    const fullText = "MD MONIR HOSSAIN - FRONTEND DEVELOPER";
 
     return (
-        <section id="about" className="py-8 px-4 flex flex-col items-center justify-center bg-[#0C031C]">
+        <section id="about" className="py-12 px-4 flex flex-col items-center justify-center bg-[#0C031C]">
             {/* Section Title */}
             <motion.h2
                 className="text-4xl sm:text-5xl font-bold mb-8 text-center text-purple-400"
@@ -63,17 +65,21 @@ const About = () => {
                 <motion.img
                     src={aboutImg}
                     alt="About Me"
-                    className="w-96 h-96 object-cover rounded-lg shadow-lg"
+                    className="w-80 h-80 md:w-96 md:h-96 object-cover rounded-lg shadow-lg"
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
                 />
 
                 {/* Text Section */}
                 <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                    {/* Typewriter Name + Profession */}
+                    {/* ✅ Typewriter Name + Profession */}
                     <div className="text-2xl font-bold mb-4 whitespace-pre-wrap">
-                        <TypewriterLoop text={name} color="text-purple-300" typingSpeed={150} pauseTime={1500} />
-                        <TypewriterLoop text={profession} color="text-pink-400" typingSpeed={150} pauseTime={1500} />
+                        <TypewriterLoop
+                            text={fullText}
+                            color="text-pink-400"
+                            typingSpeed={120}
+                            pauseTime={2000}
+                        />
                     </div>
 
                     {/* Description */}
@@ -88,7 +94,7 @@ const About = () => {
                     <button
                         onClick={() => setShowFull(!showFull)}
                         className={`px-4 py-1 border-2 cursor-pointer border-yellow-400 rounded-3xl font-semibold transition-colors duration-300
-                            ${showFull ? "text-white border-2 border-yellow-300 hover: hover:bg-yellow-400 hover:text-black" : "text-white hover:bg-yellow-400 hover:text-black"}`}
+              ${showFull ? "text-white border-2 border-yellow-300 hover:bg-yellow-400 hover:text-black" : "text-white hover:bg-yellow-400 hover:text-black"}`}
                     >
                         {showFull ? "Read Less" : "Read More"}
                     </button>
@@ -125,22 +131,6 @@ const About = () => {
                     </div>
                 </div>
             </motion.div>
-
-            {/* Blinking cursor style */}
-            <style jsx>{`
-                .blinking-cursor {
-                    display: inline-block;
-                    width: 1px;
-                    background-color: white;
-                    animation: blink 1s infinite;
-                    margin-left: 2px;
-                }
-                @keyframes blink {
-                    0% { opacity: 1; }
-                    50% { opacity: 0; }
-                    100% { opacity: 1; }
-                }
-            `}</style>
         </section>
     );
 };

@@ -33,7 +33,7 @@ const projectsData = [
         description:
             "Gardening Hub is a vibrant, community-driven platform designed to connect gardening enthusiasts, from beginners to seasoned horticulturists. Whether you're looking to share your gardening experiences, seek advice, or discover new techniques, Gardening Hub offers a wealth of resources to support your green journey.",
         image:
-            "https://i.ibb.co.com/m5vz7q6J/Screenshot-2025-08-08-160153.png",
+            "https://i.ibb.co.com/V0np9HFR/Screenshot-2025-09-27-125415.png",
         github:
             "https://github.com/monirhossain-oss/social-events-platform-client",
         live: "https://gardening-hub-live.com",
