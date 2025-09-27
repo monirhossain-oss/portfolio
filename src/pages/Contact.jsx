@@ -75,7 +75,7 @@ const Contact = () => {
                 variants={sectionVariant}
                 className="text-4xl font-bold text-center text-purple-400 mb-12"
             >
-                Contact Me
+                Let’s Build Something Great
             </motion.h2>
 
             {/* Content Grid */}
