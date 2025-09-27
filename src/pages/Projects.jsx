@@ -7,17 +7,35 @@ import "react-loading-skeleton/dist/skeleton.css";
 const projectsData = [
     {
         name: "DiscourseHub",
-        description: "DiscourseHub is a progressive web app (PWA) designed to seamlessly integrate multiple Discourse forums into a single, user-friendly interface. Whether you're managing community discussions, seeking support, or engaging with interest-based groups, DiscourseHub streamlines your experience by consolidating all your forums in one place",
-        image: "https://i.ibb.co.com/tMp09fgW/Screenshot-2025-08-19-082915.png",
+        type: "MERN | Full-Stack Web App",
+        description:
+            "DiscourseHub is a progressive web app (PWA) designed to seamlessly integrate multiple Discourse forums into a single, user-friendly interface. Whether you're managing community discussions, seeking support, or engaging with interest-based groups, DiscourseHub streamlines your experience by consolidating all your forums in one place.",
+        image:
+            "https://i.ibb.co.com/Xrd3GMfR/Screenshot-2025-09-27-112340.png",
         github: "https://github.com/monirhossain-oss/DiscourseHub-Client",
         live: "https://discoursehub.web.app/",
         details: "#",
     },
     {
+        name: "TechCrunch Landing Page",
+        type: "Frontend App | Landing Page",
+        description:
+            "TechCrunch Landing Page is a fully responsive web project built using React, Tailwind CSS, React Router, and React Icons. It replicates the modern look and feel of TechCrunch’s homepage with clean UI components, smooth navigation, and optimized responsiveness across devices.",
+        image:
+            "https://i.ibb.co.com/SGN1jCX/Screenshot-2025-09-27-112959.png",
+        github: "https://github.com/monirhossain-oss/TechCrunch",
+        live: "https://client-theta-drab.vercel.app/",
+        details: "#",
+    },
+    {
         name: "Gardening Hub",
-        description: "Gardening Hub is a vibrant, community-driven platform designed to connect gardening enthusiasts, from beginners to seasoned horticulturists. Whether you're looking to share your gardening experiences, seek advice, or discover new techniques, Gardening Hub offers a wealth of resources to support your green journey.",
-        image: "https://i.ibb.co.com/m5vz7q6J/Screenshot-2025-08-08-160153.png",
-        github: "https://github.com/monirhossain-oss/social-events-platform-client",
+        type: "MERN | Community Platform",
+        description:
+            "Gardening Hub is a vibrant, community-driven platform designed to connect gardening enthusiasts, from beginners to seasoned horticulturists. Whether you're looking to share your gardening experiences, seek advice, or discover new techniques, Gardening Hub offers a wealth of resources to support your green journey.",
+        image:
+            "https://i.ibb.co.com/m5vz7q6J/Screenshot-2025-08-08-160153.png",
+        github:
+            "https://github.com/monirhossain-oss/social-events-platform-client",
         live: "https://gardening-hub-live.com",
         details: "#",
     },
@@ -33,6 +51,7 @@ const Project = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        // simulate API loading
         setTimeout(() => {
             setProjects(projectsData);
             setLoading(false);
@@ -44,6 +63,7 @@ const Project = () => {
             id="projects"
             className="w-full px-4 py-16 flex flex-col items-center justify-center bg-[#0C031C]"
         >
+            {/* Section Title */}
             <motion.h2
                 className="text-3xl sm:text-4xl font-bold text-purple-400 mb-10 text-center"
                 initial={{ opacity: 0, y: 30 }}
@@ -52,9 +72,11 @@ const Project = () => {
                 My Projects
             </motion.h2>
 
+            {/* Project Cards */}
             <div className="flex flex-col gap-10 w-full max-w-6xl">
                 {loading
-                    ? [1, 2, 3].map((i) => (
+                    ? // Skeleton Loader
+                    [1, 2, 3].map((i) => (
                         <div
                             key={i}
                             className="flex flex-col md:flex-row gap-6 items-center w-full"
@@ -78,34 +100,23 @@ const Project = () => {
                                     highlightColor="#2c1a59"
                                 />
                                 <div className="flex gap-4 mt-2">
-                                    <Skeleton
-                                        circle
-                                        height={40}
-                                        width={40}
-                                        baseColor="#1a0c36"
-                                        highlightColor="#2c1a59"
-                                    />
-                                    <Skeleton
-                                        circle
-                                        height={40}
-                                        width={40}
-                                        baseColor="#1a0c36"
-                                        highlightColor="#2c1a59"
-                                    />
-                                    <Skeleton
-                                        circle
-                                        height={40}
-                                        width={40}
-                                        baseColor="#1a0c36"
-                                        highlightColor="#2c1a59"
-                                    />
+                                    {[1, 2, 3].map((btn) => (
+                                        <Skeleton
+                                            key={btn}
+                                            circle
+                                            height={40}
+                                            width={40}
+                                            baseColor="#1a0c36"
+                                            highlightColor="#2c1a59"
+                                        />
+                                    ))}
                                 </div>
                             </div>
                         </div>
                     ))
-                    : projects.map((project, index) => {
+                    : // Projects Mapping
+                    projects.map((project, index) => {
                         const isEven = index % 2 === 1;
-
                         return (
                             <motion.div
                                 key={index}
@@ -127,11 +138,27 @@ const Project = () => {
                                 {/* Content */}
                                 <div className="md:w-2/3 p-6 flex flex-col justify-between">
                                     <div>
-                                        <h3 className="text-2xl font-bold text-white mb-2">
-                                            {project.name}
-                                        </h3>
-                                        <p className="text-gray-200 mb-4">{project.description}</p>
+                                        {/* Title + Type Row */}
+                                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-2">
+                                            {/* On mobile: Type first, then Name (order classes) */}
+                                            <p className="order-1 md:order-2 inline-block px-3 py-1 text-sm font-semibold 
+                                            text-white bg-gradient-to-r from-purple-700 to-purple-900 
+                                            rounded-full shadow-lg">
+                                                {project.type}
+                                            </p>
+
+                                            <h3 className="order-2 md:order-1 text-2xl font-bold text-white">
+                                                {project.name}
+                                            </h3>
+                                        </div>
+
+                                        {/* Description */}
+                                        <p className="text-gray-200 mb-4">
+                                            {project.description}
+                                        </p>
                                     </div>
+
+                                    {/* Links */}
                                     <div className="flex gap-4 mt-auto">
                                         <motion.a
                                             href={project.github}

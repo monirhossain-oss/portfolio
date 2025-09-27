@@ -119,7 +119,7 @@ const About = () => {
                         <a href="https://www.instagram.com/who65478932/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition text-2xl">
                             <FaInstagram />
                         </a>
-                        <a href="/your-cv.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition text-2xl">
+                        <a href="https://drive.google.com/file/d/1phDr7FgDQOFlM1r6p1OP0ZneEQ715V14/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition text-2xl">
                             <FaFileAlt />
                         </a>
                     </div>

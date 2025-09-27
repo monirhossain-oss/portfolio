@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MdOutlineFileDownload } from "react-icons/md";
-import image from "../assets/retouch_2025081521580345 (1)[1].jpg";
+import image from "../assets/792e5133-538f-4a90-8ac5-53c288571487.png"
 
 // Animation Variants
 const letterVariantLeft = {
@@ -89,7 +89,7 @@ const Banner = () => {
                         applications that make life easier and more enjoyable.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center md:justify-start">
+                    <div className="flex  sm:flex-row gap-4 sm:gap-6 justify-center md:justify-start">
                         <motion.a
                             href="#contact"
                             whileHover={{ scale: 1.05 }}
@@ -100,9 +100,10 @@ const Banner = () => {
                         </motion.a>
 
                         <a
-                            href="/resume.pdf"
+                            href="https://drive.google.com/file/d/1phDr7FgDQOFlM1r6p1OP0ZneEQ715V14/view?usp=sharing"
+                            target="_blank"
                             download
-                            className="border-2 border-yellow-400 text-white font-semibold px-6 py-1 rounded-full shadow hover:bg-yellow-400 hover:text-black transition duration-300 flex items-center justify-center gap-2"
+                            className="border-2 border-yellow-400 text-white font-semibold px-6 py-1 rounded-full shadow hover:bg-yellow-400 hover:text-black transition duration-500 flex items-center justify-center gap-2"
                         >
                             <MdOutlineFileDownload size={20} />
                             Resume
@@ -120,9 +121,12 @@ const Banner = () => {
                     <img
                         src={image}
                         alt="Profile"
-                        className="w-48 sm:w-64 md:w-80 lg:w-96 rounded-full shadow-lg object-cover bg-transparent"
+                        className="w-48 sm:w-64 md:w-80 lg:w-96 object-cover 
+               drop-shadow-[0_0_90px_rgba(168,85,247,0.6)]"
                     />
                 </motion.div>
+
+
             </div>
         </div>
     );
